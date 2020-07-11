@@ -8,7 +8,7 @@ body {
   width: 95vw;
 }
 
-#introduction {
+#introduction, #journey {
   text-align: center;  
 }
 
@@ -18,19 +18,19 @@ body {
   }
 }
 
- #introduction p {
+ #introduction p, #journey p {
   top: 50%;
   margin-top: 2vh;
   font-size: large;
   text-align: center;
 }
 
-#introduction img {
+#introduction img, #journey img {
   width: 200px;
   padding: 5%;
 }
 
-h2 {
+h2, h3 {
   text-align: center;
 }
 
