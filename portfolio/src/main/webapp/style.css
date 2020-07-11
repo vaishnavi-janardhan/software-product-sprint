@@ -34,28 +34,6 @@ h2 {
   text-align: center;
 }
 
-footer {
-  margin: 0;
-  width: 100%;
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding-top: 1%;
-  padding-bottom: 1%;
-}
-
-.fa {
-  color: white; 
-  font-size: 50px;
-  text-align: center;
-  text-decoration: none;
-  width: 50px;
-}
-
-.fa:hover {
-  opacity: 0.7;
-}
-
 .row {
     padding: 2%;
 }
@@ -107,4 +85,27 @@ footer {
 .project .btn:hover {
   background-color: black;
   color: white;
+}
+
+footer {
+  margin: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-size: large;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.fa {
+  color: white; 
+  font-size: 50px;
+  text-align: center;
+  text-decoration: none;
+  width: 50px;
+}
+
+.fa:hover {
+  opacity: 0.7;
 }
