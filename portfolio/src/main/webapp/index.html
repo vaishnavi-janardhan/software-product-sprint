@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaishnavi Janardhan | Exploring Myself</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="content">
+    <div class="container-fluid" id="content">
       <img src="images/avatar.webp" alt="avatar" width="100" height="120">
       <p>Hello! My name is Vaishnavi Janardhan. I am currently pursuing my BTech in CSE at 
           Manipal Institute of Technology, Manipal. I live in Udupi which is a coastal 
@@ -17,14 +18,23 @@
           I make handicrafts and binge-watch shows. I am learning to play the 
           Ukulele, and it's so much fun!</p>
       <h2>My Projects</h2>
-      <ul>
-        <li>Part of the team that developed the Android app for the literature fest of MAHE <a href="https://play.google.com/store/apps/details?id=com.milap.milapfest">View app</a></li>
-        <img src="images/milap.webp" alt="MILAP app" width="100" height="120">
-        <li>Part of the team that developed a prototype of placement dashboard for TalentSprint <a href="https://github.com/vaishnavi-janardhan/Placement-Dashboard">View project</a></li>
-        <img src="images/placement_dashboard.png" alt="placement dashboard template" width="100" height="120">
-        <li>Android app for your daily dose of news <a href="https://github.com/vaishnavi-janardhan/News4U">View project</a></li>
-        <img src="images/news_app.png" alt="News app" width="100" height="120">
-      </ul>
+      <div class="row">
+        <div class="col-sm-4 project">
+          <img src="images/milap.webp" alt="MILAP app">
+          <p>Part of the team that developed the Android app for the literature fest of MAHE</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.milap.milapfest">View app</a>
+        </div>
+        <div class="col-sm-4 project">
+          <img src="images/placement_dashboard.png" alt="placement dashboard template">
+          <p>Part of the team that developed a prototype of placement dashboard for TalentSprint</p>
+          <a class="btn" href="https://github.com/vaishnavi-janardhan/Placement-Dashboard">View project</a>
+        </div>
+        <div class="col-sm-4 project">
+          <img src="images/news_app.png" alt="News app">
+          <p>Android app for your daily dose of news</p>
+          <a class="btn" href="https://github.com/vaishnavi-janardhan/News4U">View project</a>
+        </div>
+      </div>
     </div>
     <footer>
       <p>Connect with me</p>
