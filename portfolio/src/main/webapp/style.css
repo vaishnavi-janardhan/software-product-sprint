@@ -10,6 +10,7 @@ body {
 
 #introduction, #journey {
   text-align: center;  
+  margin: 0%;
 }
 
 @media only screen and (min-width: 1086px) {
