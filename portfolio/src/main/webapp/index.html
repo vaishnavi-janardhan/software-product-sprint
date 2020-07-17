@@ -2,17 +2,69 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaishnavi Janardhan | Exploring Myself</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+    <div class="container-fluid" id="content">
+      <div class="row" id="introduction">
+          <div class="col-sm-3">
+            <img src="images/avatar_hello.webp" alt="avatar">
+          </div>
+          <div class="col-sm-9">
+            <h3>Hello! I am Vaishnavi Janardhan.</h3>
+            <p>I am currently pursuing my BTech in CSE at 
+            Manipal Institute of Technology, Manipal. I live in Udupi which is a coastal 
+            town in Karnataka. I love coding and problem-solving. During my leisure time, 
+            I make handicrafts and binge-watch shows. I am learning to play the 
+            Ukulele, and it's so much fun!</p>
+          </div>
+      </div>
+      <h2>My Projects</h2>
+      <div class="row">
+        <div class="col-sm-4 project">
+          <img src="images/milap.webp" alt="MILAP app">
+          <p>Part of the team that developed the Android app for the literature fest of MAHE</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.milap.milapfest">View app</a>
+        </div>
+        <div class="col-sm-4 project">
+          <img src="images/placement_dashboard.png" alt="placement dashboard template">
+          <p>Part of the team that developed a prototype of placement dashboard for TalentSprint</p>
+          <a class="btn" href="https://github.com/vaishnavi-janardhan/Placement-Dashboard">View project</a>
+        </div>
+        <div class="col-sm-4 project">
+          <img src="images/news_app.png" alt="News app">
+          <p>Android app for users' daily dose of news</p>
+          <a class="btn" href="https://github.com/vaishnavi-janardhan/News4U">View project</a>
+        </div>
+      </div>
     </div>
+    <div class="row" id="journey">
+      <div class="col-sm-9">
+        <h3>My journey in the field of Technology</h3>
+          <p>Worked as a Software Engineer Intern at Microsoft R&D India from May to June 2020
+            <br>Selected for the Women Techmakers Engineering Fellows Program by Google
+            <br>Currently leading Teaching Code for Good, Manipal, a student-run educational venture 
+            to teach computer fundamentals to school children</p>
+      </div>
+      <div class="col-sm-3">
+        <img src="images/avatar_rainbow.webp" alt="avatar">
+      </div>
+    </div>
+    <div class="type-div">
+        <span class="typed"></span>
+    </div>
+    <footer>
+      <p>Connect with me</p>
+      <a href="mailto:vaish.janardhan@gmail.com" class="fa fa-envelope fa-lg"></a>
+      <a href="https://www.linkedin.com/in/vaish-janardhan/" class="fa fa-linkedin fa-lg"></a>
+      <a href="https://github.com/vaishnavi-janardhan" class="fa fa-github fa-lg"></a>
+    </footer>
   </body>
 </html>
