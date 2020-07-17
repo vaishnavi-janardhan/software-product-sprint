@@ -9,3 +9,10 @@ $(document).ready(function() {
   };
   var typed = new Typed('.typed', options);
 });
+
+function showHelloMessage() {
+    console.log('Fetching message.');
+    fetch('/data').then(response => response.text()).then((message) => {
+        document.getElementById('message-container').innerHTML = message;
+    });
+}
