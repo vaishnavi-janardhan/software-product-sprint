@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="showComments()">
     <div class="container-fluid" id="content">
       <div class="row" id="introduction">
           <div class="col-sm-3">
@@ -56,6 +56,9 @@
       <div class="col-sm-3">
         <img src="images/avatar_rainbow.webp" alt="avatar">
       </div>
+    </div>
+    <div class="row" id="comments-container">
+        <h3>Comments</h3>
     </div>
     <div class="type-div">
         <span class="typed"></span>

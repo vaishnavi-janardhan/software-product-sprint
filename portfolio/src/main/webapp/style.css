@@ -88,6 +88,11 @@ h2, h3 {
   color: white;
 }
 
+#comments-container {
+  font-size: large;
+  margin: 0%;
+}
+
 .type-div {
   text-align: center;
   font-size: x-large;

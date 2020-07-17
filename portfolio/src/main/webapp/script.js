@@ -10,9 +10,19 @@ $(document).ready(function() {
   var typed = new Typed('.typed', options);
 });
 
-function showHelloMessage() {
-    console.log('Fetching message.');
-    fetch('/data').then(response => response.text()).then((message) => {
-        document.getElementById('message-container').innerHTML = message;
+function showComments() {
+    console.log('Fetching comments.');
+    fetch('/data').then(response => response.json()).then((comments) => {
+        console.log(comments);
+        const commentsDiv = document.getElementById('comments-container');
+        for (var it in comments) {
+            commentsDiv.appendChild(createListElement(comments[it]));
+        }
     });
+}
+
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }
