@@ -32,10 +32,14 @@ public class DataServlet extends HttpServlet {
   @Override
   public void init() {
     comments = new ArrayList<>();
-    comments.add("Hey, this is my first comment");
-    comments.add("Just want this comment to be very long, so here's a fun fact. " +
-        "The average person breathes around 22,000 times each day. - Lung Foundation Australia");
-    comments.add("This is also one more comment.");    
+  }
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    String text = request.getParameter("text-input");
+    if (!text.equals(""))
+        comments.add(text);
+    response.sendRedirect("/index.html");
   }
 
   @Override

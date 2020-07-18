@@ -93,6 +93,14 @@ h2, h3 {
   margin: 0%;
 }
 
+textarea {
+    width: 100%;
+}
+
+#comments-container h3 {
+  text-align: left;
+}
+
 .type-div {
   text-align: center;
   font-size: x-large;
