@@ -15,14 +15,14 @@ function showComments() {
     fetch('/data').then(response => response.json()).then((comments) => {
         console.log(comments);
         const commentsDiv = document.getElementById('comments-container');
-        for (var it in comments) {
-            commentsDiv.appendChild(createListElement(comments[it]));
-        }
+        comments.forEach((comment) => {
+            commentsDiv.appendChild(createListElement(comment));
+        })
     });
 }
 
-function createListElement(text) {
+function createListElement(comment) {
   const liElement = document.createElement('li');
-  liElement.innerText = text;
+  liElement.innerText = comment.message;
   return liElement;
 }
