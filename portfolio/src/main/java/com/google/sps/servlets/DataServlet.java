@@ -29,16 +29,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-
-//   private List<String> comments;
-
-//   @Override
-//   public void init() {
-//     comments = new ArrayList<>();
-//   }
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -52,8 +44,6 @@ public class DataServlet extends HttpServlet {
       datastore.put(commentEntity);
     }
     
-    // if (!text.equals(""))
-    //     comments.add(text);
     response.sendRedirect("/index.html");
   }
 
