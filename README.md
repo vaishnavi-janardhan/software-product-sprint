@@ -1,6 +1,6 @@
 # Google Software Product Sprint
 
-This repo contains my portfolio and [SPS](https://buildyourfuture.withgoogle.com/programs/softwareproductsprint/) projects.
+This repo contains my [portfolio](https://vjanardhan-sps-summer20.appspot.com/) and [SPS](https://buildyourfuture.withgoogle.com/programs/softwareproductsprint/) projects.
 
 Google's Software Product Sprint brings together university students and Googlers for 11 weeks of 
 virtual programming and community building. The program’s mission is to build a network of support 
