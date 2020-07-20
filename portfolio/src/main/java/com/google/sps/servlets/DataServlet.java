@@ -21,6 +21,7 @@ import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.sps.data.Comment;
 import com.google.gson.Gson;
+import org.apache.commons.lang3.StringUtils;
 import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public class DataServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     String text = request.getParameter("text-input");
 
-    if (!text.equals("")) {
+    if (StringUtils.isNotEmpty(text)) {
       Entity commentEntity = new Entity("Comment");
       commentEntity.setProperty("message",text);
 
