@@ -19,6 +19,7 @@ import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
+import com.google.sps.Constants;
 import com.google.sps.data.Comment;
 import com.google.gson.Gson;
 import org.apache.commons.lang3.StringUtils;
@@ -38,8 +39,8 @@ public class DataServlet extends HttpServlet {
     String text = request.getParameter("text-input");
 
     if (StringUtils.isNotEmpty(text)) {
-      Entity commentEntity = new Entity("Comment");
-      commentEntity.setProperty("message",text);
+      Entity commentEntity = new Entity(Constants.COMMENT);
+      commentEntity.setProperty(Constants.MESSAGE, text);
 
       DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
       datastore.put(commentEntity);
@@ -50,7 +51,7 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    Query query = new Query("Comment");
+    Query query = new Query(Constants.COMMENT);
     
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
@@ -58,7 +59,7 @@ public class DataServlet extends HttpServlet {
     List<Comment> comments = new ArrayList<>();
     for (Entity entity : results.asIterable()) {
       long id = entity.getKey().getId();
-      String message = (String) entity.getProperty("message");
+      String message = (String) entity.getProperty(Constants.MESSAGE);
 
       Comment comment = new Comment(id, message);
       comments.add(comment);
