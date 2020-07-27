@@ -92,7 +92,7 @@ h2, h3 {
   width: 100%;
 }
 
-#comments-container {
+#comments-container, #comment-form-container {
   font-size: large;
   margin: 0%;
 }
@@ -101,8 +101,16 @@ textarea {
     width: 100%;
 }
 
+#comments-container {
+  padding-top: 0%;
+}
+
 #comments-container h3 {
   text-align: left;
+}
+
+.error {
+  color: #FF0000;
 }
 
 .type-div {

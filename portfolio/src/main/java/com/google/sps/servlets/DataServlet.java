@@ -19,8 +19,10 @@ import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
+import com.google.sps.Constants;
 import com.google.sps.data.Comment;
 import com.google.gson.Gson;
+import org.apache.commons.lang3.StringUtils;
 import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
@@ -34,22 +36,28 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String text = request.getParameter("text-input");
+    String text = request.getParameter("comment-message");
 
-    if (!text.equals("")) {
-      Entity commentEntity = new Entity("Comment");
-      commentEntity.setProperty("message",text);
+    if (StringUtils.isNotEmpty(text)) {
+      text = StringUtils.trim(text);
+      if (StringUtils.length(text) < 3) {
+          response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Comment message should have at least 3 characters");
+      } else {
+        Entity commentEntity = new Entity(Constants.COMMENT);
+        commentEntity.setProperty(Constants.MESSAGE, text);
 
-      DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-      datastore.put(commentEntity);
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        datastore.put(commentEntity);
+      }
+    } else {
+        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Comment message cannot be empty");
     }
-    
-    response.sendRedirect("/index.html");
+    return;
   }
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    Query query = new Query("Comment");
+    Query query = new Query(Constants.COMMENT);
     
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
@@ -57,7 +65,7 @@ public class DataServlet extends HttpServlet {
     List<Comment> comments = new ArrayList<>();
     for (Entity entity : results.asIterable()) {
       long id = entity.getKey().getId();
-      String message = (String) entity.getProperty("message");
+      String message = (String) entity.getProperty(Constants.MESSAGE);
 
       Comment comment = new Comment(id, message);
       comments.add(comment);
