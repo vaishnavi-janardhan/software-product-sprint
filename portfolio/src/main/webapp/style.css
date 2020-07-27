@@ -1,5 +1,6 @@
 body {
-    margin: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 #content {
@@ -95,6 +96,12 @@ h2, h3 {
 #comments-container, #comment-form-container {
   font-size: large;
   margin: 0%;
+}
+
+#comments-container p {
+  padding: 5px 10px;
+  background-color: #EEEEEE;
+  border: 1px solid #DDDDDD;
 }
 
 textarea {

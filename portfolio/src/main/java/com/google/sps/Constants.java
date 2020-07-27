@@ -8,4 +8,5 @@ public final class Constants {
 
   public static final String COMMENT = "Comment";
   public static final String MESSAGE = "message";
+  public static final String TIMESTAMP = "timestamp";
 }

@@ -64,15 +64,15 @@ function showComments() {
     hElement.innerText = "Comments";
     commentsDiv.appendChild(hElement);
     comments.forEach((comment) => {
-      commentsDiv.appendChild(createListElement(comment));
+      commentsDiv.appendChild(createCommentItem(comment));
     })
   });
 }
 
-function createListElement(comment) {
-  const liElement = document.createElement('li');
-  liElement.innerText = comment.message;
-  return liElement;
+function createCommentItem(comment) {
+  const pElement = document.createElement('p');
+  pElement.innerText = comment.message;
+  return pElement;
 }
 
 google.charts.load("current", {packages:["timeline"]});
