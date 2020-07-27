@@ -36,17 +36,23 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String text = request.getParameter("text-input");
+    String text = request.getParameter("comment-message");
 
     if (StringUtils.isNotEmpty(text)) {
-      Entity commentEntity = new Entity(Constants.COMMENT);
-      commentEntity.setProperty(Constants.MESSAGE, text);
+      text = StringUtils.trim(text);
+      if (StringUtils.length(text) < 3) {
+          response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Comment message should have at least 3 characters");
+      } else {
+        Entity commentEntity = new Entity(Constants.COMMENT);
+        commentEntity.setProperty(Constants.MESSAGE, text);
 
-      DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-      datastore.put(commentEntity);
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        datastore.put(commentEntity);
+      }
+    } else {
+        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Comment message cannot be empty");
     }
-    
-    response.sendRedirect("/index.html");
+    return;
   }
 
   @Override
