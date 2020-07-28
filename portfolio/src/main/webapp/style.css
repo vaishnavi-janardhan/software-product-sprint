@@ -88,6 +88,27 @@ h2, h3 {
   color: white;
 }
 
+#comments-container, #comment-form-container {
+  font-size: large;
+  margin: 0%;
+}
+
+textarea {
+    width: 100%;
+}
+
+#comments-container {
+  padding-top: 0%;
+}
+
+#comments-container h3 {
+  text-align: left;
+}
+
+.error {
+  color: #FF0000;
+}
+
 .type-div {
   text-align: center;
   font-size: x-large;
